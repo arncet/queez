@@ -57,6 +57,6 @@
   },
   "scripts": {
     "lint": "eslint src/*; exit 0",
-    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register; exit 0"
+    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register;"
   }
 }
