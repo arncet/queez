@@ -2,6 +2,8 @@
 
 A simple Javascript library to create quizz.
 
+![](https://travis-ci.org/arncet/queez.svg?branch=master)
+
 ##Navigation :
 
 * [How to use](#how-to-use-)
