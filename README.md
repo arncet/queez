@@ -4,11 +4,11 @@ A simple Javascript library to create quizz.
 
 ##Navigation :
 
-* [How to use](#how-to-use)
-* [Documentation](#documentation)
-* [Examples](#examples)
-* [License](#license)
-* [Development](#development)
+* [How to use](#how-to-use-)
+* [Documentation](#documentation-)
+* [Examples](#examples-)
+* [License](#license-)
+* [Development](#development-)
 
 ##How to use :
 
@@ -64,10 +64,10 @@ const quizz = new Queez(config)
 //quizz.custom.title => 'An awesome quizz'
 ```
 
-* `question` : Represents quizz's questions (see doc [here](#question)).
-* `categories` : Represents results's categories of the quizz (voir la doc [here](#category)).
-* `results` : Represents possibles quizz's results (voir la doc [here](#result)).
-* `callbacks` : Represents available quizz's callbacks (voir la doc [here](#callbacks)).
+* `question` : Represents quizz's questions (see doc [here](#question-)).
+* `categories` : Represents results's categories of the quizz (voir la doc [here](#category-)).
+* `results` : Represents possibles quizz's results (voir la doc [here](#result-)).
+* `callbacks` : Represents available quizz's callbacks (voir la doc [here](#callbacks-)).
 
 
 You will find below the details of the main property `config` :
@@ -84,14 +84,14 @@ If a property has a wrong type, the default value will be assigned.
 
 <u>Methods :</u>
 
-####`getQuestion(questionId)` => [Question](#question) :
+####`getQuestion(questionId)` => [Question](#question-) :
 Retrieve a question from its id. <br/>
 
 * `questionId` (Integer | String) : Question id.
 
 ---------------------------------------
 
-####`getQuestionsBy(attribut, value)` => Array of [Question](#question) :
+####`getQuestionsBy(attribut, value)` => Array of [Question](#question-) :
 Retrieve an array of questions from the value of a given attribute
 
 * `attribute` (String | Array)  : Attribute (ot attribute's path, e.g `['custom', 'title']` for `title` attribute of `custom`)<br/>
@@ -99,21 +99,21 @@ Retrieve an array of questions from the value of a given attribute
 
 ---------------------------------------
 
-####`getQuestionByAnswer` => [Question](#question) :
+####`getQuestionByAnswer` => [Question](#question-) :
 Retrieve a question from an answer id.
 
 * `answerId` (Integer \| String) : Answer's id.
 
 ---------------------------------------
 
-####`getResult` => [Result](#result) :
+####`getResult` => [Result](#result-) :
 Retrieve a result from its id.
 
 * `resultId` (Integer \| String) : Result's id.
 
 ---------------------------------------
 
-####`getResultsBy` => Array of [Result](#result) :
+####`getResultsBy` => Array of [Result](#result-) :
 Retrieve an array of result from the value of a given attribute.
 
 * `attribute` (String | Array)  : Attribute (ot attribute's path, e.g `['custom', 'title']` for `title` attribute of `custom`)<br/>
@@ -121,14 +121,14 @@ Retrieve an array of result from the value of a given attribute.
 
 ---------------------------------------
 
-####`getCategory` => [Category](#category) :
+####`getCategory` => [Category](#category-) :
 Retrieve a category from its id.
 
 * `categoryId` : L'id de la categorie.
 
 ---------------------------------------
 
-####`getCategoriesBy` => Array of [Category](#category) :
+####`getCategoriesBy` => Array of [Category](#category-) :
 Retrieve an array of category from the value of a given attribute.
 
 * `attribute` (String | Array)  : Attribute (ot attribute's path, e.g `['custom', 'title']` for `title` attribute of `custom`)<br/>
@@ -141,7 +141,7 @@ Check if all questions has been answered.
 
 ---------------------------------------
 
-####`getResponse` => Array of [Result](#result) | Array of [Question](#question) (props less):
+####`getResponse` => Array of [Result](#result-) | Array of [Question](#question-) (props less):
 Get finals quizz's results. <br/>
 If there is elements in `config.results`, `getResponse` return an `result` array, else return quizz's `question` as 'props less' (just contain properties : `id`, `content`, `custom` and `answer` (props less)).
 
@@ -166,7 +166,7 @@ There is a example of question :
 * `id` : Represents the question identifier (unique).
 * `content` : Represents the content of the question
 * `categoryId` : Represent the id of the category to which belongs the question.
-* `answers ` : Represnete the proposed answers to the question (see doc [here](#answer)).
+* `answers ` : Represnete the proposed answers to the question (see doc [here](#answer-)).
 * `multiple`: Define if a question can be answered several times, with different answers.
 
 Other properties may be added, they will automatically injected within the question `custom` property. <br/>
@@ -182,7 +182,7 @@ Other properties may be added, they will automatically injected within the quest
 
 <u>Methods :</u>
 
-#####`getAnswer(answerId)` => [Answer](#answer) :
+#####`getAnswer(answerId)` => [Answer](#answer-) :
 Retrieve a answer from its id.
 
 * `answerId ` (Integer | String) : L'id de la reponse.
@@ -283,7 +283,7 @@ Here is an example of results :
 <u>Properties :</u>
 
 * `id` : Represents the result identifier (unique).
-* `filter` : Represents the conditions to obtain this result. A `result` without filter will always be returned in the final results of the quiz (via the method [getResponse](#getResponse)). <br/> Each `filter` object is a condition, the key represents the `category`'s id and value define its value (the value of `answer.value`)
+* `filter` : Represents the conditions to obtain this result. A `result` without filter will always be returned in the final results of the quiz (via the method [getResponse](#getResponse-)). <br/> Each `filter` object is a condition, the key represents the `category`'s id and value define its value (the value of `answer.value`)
 
 	```javascript
 	{
@@ -366,16 +366,16 @@ Each `callback` is an `array` of function`, each function will be called once th
 <u>Avaliable callbacks list :</u>
 
 * `onQuestionRespond` :  Execute all associated functions when a question is answered. Callbacks will have the following properties :
-	* `question` [Question](#question): The answered question.
-	* `answer` [Answer](#answer): The question's answer.
+	* `question` [Question](#question-): The answered question.
+	* `answer` [Answer](#answer-): The question's answer.
 	* `error` null | string : Error, `null` If there is no error.
 
-* `onQuestionUnRespond` : Execute all associated functions when a question is un-answered. Callbacks will have the following properties :	* `question` [Question](#question): The answered question.
-	* `answer` [Answer](#answer): The question's answer.
+* `onQuestionUnRespond` : Execute all associated functions when a question is un-answered. Callbacks will have the following properties :	* `question` [Question](#question-): The answered question.
+	* `answer` [Answer](#answer-): The question's answer.
 	* `error` null | string : Error, `null` If there is no error.
 
 * `onQuizzComplete` : Execute all associated functions when the quiz ends (when all the questions have summers reponsues). Callbacks will have the following properties :
-	* `quizz` [Queez](#queez): L'instance du quizz.
+	* `quizz` [Queez](#queez-): L'instance du quizz.
 
 ##Examples :
 
