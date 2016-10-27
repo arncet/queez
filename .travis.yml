@@ -5,6 +5,3 @@ before_install :
  - "npm install -g mocha"
 install :
  - "npm install chai"
-before_script:
-  - npm install -g gulp
-script: gulp
