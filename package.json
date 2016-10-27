@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "A simple Javascript library to create quizz",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arncet/queez"
+  },
   "keywords": [
     "quiz",
     "quizz",
@@ -22,8 +26,12 @@
       ]
     ]
   },
-  "author": "Arnaud Cetoute",
+  "author": "Arnaud Cetoute <arnaud.cetoute@hotmail.fr>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arncet/queez/issues"
+  },
+  "homepage": "https://github.com/arncet/queez",
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-core": "^6.9.1",
