@@ -19,12 +19,12 @@ gulp.task('watch', () => {
   }));
   return watcher.on('update', (files) => {
     watcher.bundle().on('error', handleErrors)
-      .pipe(source('queez.js'))
+      .pipe(source('index.js'))
       .pipe(gulp.dest('./dist'))
     showFileUpdated(files);
   })
   .bundle()
-  .pipe(source('queez.js'))
+  .pipe(source('index.js'))
   .pipe(gulp.dest('./dist'));
 })
 
