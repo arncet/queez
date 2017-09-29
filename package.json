@@ -2,7 +2,7 @@
   "name": "queez",
   "version": "0.1.1",
   "description": "A simple Javascript library to create quizz",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/arncet/queez"
