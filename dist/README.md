@@ -1,10 +1,10 @@
-#Queez
+# Queez
 
 A simple Javascript library to create quizz.
 
 ![](https://travis-ci.org/arncet/queez.svg?branch=master)
 
-##Navigation :
+## Navigation :
 
 * [How to use](#how-to-use-)
 * [Documentation](#documentation-)
@@ -12,7 +12,7 @@ A simple Javascript library to create quizz.
 * [License](#license-)
 * [Development](#development-)
 
-##How to use :
+## How to use :
 
 Install `queez` via npm :
 
@@ -44,9 +44,9 @@ const config = {
 All informations relating to `config` content are available in the section below.
 
 
-##Documentation :
+## Documentation :
 
-###Queez :
+### Queez :
 
 <u>Properties :</u>
 
@@ -86,14 +86,14 @@ If a property has a wrong type, the default value will be assigned.
 
 <u>Methods :</u>
 
-####`getQuestion(questionId)` => [Question](#question-) :
+#### `getQuestion(questionId)` => [Question](#question-) :
 Retrieve a question from its id. <br/>
 
 * `questionId` (Integer | String) : Question id.
 
 ---------------------------------------
 
-####`getQuestionsBy(attribut, value)` => Array of [Question](#question-) :
+#### `getQuestionsBy(attribut, value)` => Array of [Question](#question-) :
 Retrieve an array of questions from the value of a given attribute
 
 * `attribute` (String | Array)  : Attribute (ot attribute's path, e.g `['custom', 'title']` for `title` attribute of `custom`)<br/>
@@ -101,21 +101,21 @@ Retrieve an array of questions from the value of a given attribute
 
 ---------------------------------------
 
-####`getQuestionByAnswer` => [Question](#question-) :
+#### `getQuestionByAnswer` => [Question](#question-) :
 Retrieve a question from an answer id.
 
 * `answerId` (Integer \| String) : Answer's id.
 
 ---------------------------------------
 
-####`getResult` => [Result](#result-) :
+#### `getResult` => [Result](#result-) :
 Retrieve a result from its id.
 
 * `resultId` (Integer \| String) : Result's id.
 
 ---------------------------------------
 
-####`getResultsBy` => Array of [Result](#result-) :
+#### `getResultsBy` => Array of [Result](#result-) :
 Retrieve an array of result from the value of a given attribute.
 
 * `attribute` (String | Array)  : Attribute (ot attribute's path, e.g `['custom', 'title']` for `title` attribute of `custom`)<br/>
@@ -123,14 +123,14 @@ Retrieve an array of result from the value of a given attribute.
 
 ---------------------------------------
 
-####`getCategory` => [Category](#category-) :
+#### `getCategory` => [Category](#category-) :
 Retrieve a category from its id.
 
 * `categoryId` : L'id de la categorie.
 
 ---------------------------------------
 
-####`getCategoriesBy` => Array of [Category](#category-) :
+#### `getCategoriesBy` => Array of [Category](#category-) :
 Retrieve an array of category from the value of a given attribute.
 
 * `attribute` (String | Array)  : Attribute (ot attribute's path, e.g `['custom', 'title']` for `title` attribute of `custom`)<br/>
@@ -138,18 +138,18 @@ Retrieve an array of category from the value of a given attribute.
 
 ---------------------------------------
 
-####`isComplete` => Boolean :
+#### `isComplete` => Boolean :
 Check if all questions has been answered.
 
 ---------------------------------------
 
-####`getResponse` => Array of [Result](#result-) | Array of [Question](#question-) (props less):
+#### `getResponse` => Array of [Result](#result-) | Array of [Question](#question-) (props less):
 Get finals quizz's results. <br/>
 If there is elements in `config.results`, `getResponse` return an `result` array, else return quizz's `question` as 'props less' (just contain properties : `id`, `content`, `custom` and `answer` (props less)).
 
 ---------------------------------------
 
-###Question :
+### Question :
 
 Questions are the main quizz element.<br/>
 There is a example of question :
@@ -184,14 +184,14 @@ Other properties may be added, they will automatically injected within the quest
 
 <u>Methods :</u>
 
-#####`getAnswer(answerId)` => [Answer](#answer-) :
+##### `getAnswer(answerId)` => [Answer](#answer-) :
 Retrieve a answer from its id.
 
 * `answerId ` (Integer | String) : L'id de la reponse.
 
 ---------------------------------------
 
-####`getAnswersBy(attribut, value)` => Array :
+#### `getAnswersBy(attribut, value)` => Array :
 Retrieve an array of answer from the value of a given attribute.
 
 * `attribute` (String | Array)  : Attribute (ot attribute's path, e.g `['custom', 'title']` for `title` attribute of `custom`)<br/>
@@ -199,30 +199,30 @@ Retrieve an array of answer from the value of a given attribute.
 
 ---------------------------------------
 
-####`isAnswered` => Boolean :
+#### `isAnswered` => Boolean :
 Return `true` if the question is answered.
 
 ---------------------------------------
 
-####`respond` :
+#### `respond` :
 Respond to the question.
 
 * `answerId` : Answer's id.
 
 ---------------------------------------
 
-####`unRespond` :
+#### `unRespond` :
 Un-resopnd to the question
 
 * `answerId` : Answer's id.
 
 ---------------------------------------
 
-####`toPropsLess` :
+#### `toPropsLess` :
 Return the `question` with just `id`, `content`, `custom` and `answers` properties (props less).
 
 
-###Answer :
+### Answer :
 
 `Answer` are several proposals for a question. <br/>
 Here is an example of a response :
@@ -249,10 +249,10 @@ Other properties may be added, they will automatically injected within the answe
 
 <u>Methods :</u>
 
-####`toPropsLess` :
+#### `toPropsLess` :
 Return `answer` with `id`, `content` and `custom` properties.
 
-###Category :
+### Category :
 
 `category` objects are the elements that make the connection between the questions and possible quiz's result. These may be characterized as the type of question. <br/>
 Here is an example of category :
@@ -271,7 +271,7 @@ Other properties may be added, they will automatically injected within the categ
 |:------------- |:-------------------| :-------------| :-----------------------|
 | id            | Integer \| String  | true          | Random string (9 char.) |
 
-###Result :
+### Result :
 
 `result` objects are the different results possible for the quiz.<br/>
 Here is an example of results :
@@ -296,7 +296,7 @@ Here is an example of results :
 
 	Conditions can be combined to build most impressive or strict conditions.
 
-	An `object` represents an `ET` and an `array` represents an `OU`:
+	An `object` represents an `ET` and an `array` represents an `OR`:
 
 	To define a result with the following condition : "favorite color" is 	"yellow" `AND` "favorite food" is "burger", must be :
 
@@ -326,7 +326,7 @@ Here is an example of results :
 	//favorite color est yellow OR favorite food is burger
 
 	{ "filter": { "favorite-color": ["blue", "red"], "favorite-food": "rice" } }
-	//favorite color is blue OU red, AND favorite food is rice
+	//favorite color is blue OR red, AND favorite food is rice
 
 	{
 		"filter": [
@@ -348,7 +348,7 @@ Other properties may be added, they will automatically injected within the resul
 | filter        | Object \| Array    | false         | { }                     |
 | content       | Integer \| String  | false         | Empty string            |
 
-###Callbacks :
+### Callbacks :
 
 `callback` are functions that are called at the end of a specific action. <br/>
 Here is an example of callback:
@@ -379,9 +379,9 @@ Each `callback` is an `array` of function`, each function will be called once th
 * `onQuizzComplete` : Execute all associated functions when the quiz ends (when all the questions have summers reponsues). Callbacks will have the following properties :
 	* `quizz` [Queez](#queez-): L'instance du quizz.
 
-##Examples :
+## Examples :
 
-###Example 1 : Preferences survey :
+### Example 1 : Preferences survey :
 
 [Sources here](https://github.com/arncet/queez/blob/master/example/quizz-config-survey.js)
 
@@ -447,7 +447,7 @@ The `questions` property of the object `config` will be:
 ]
 ```
 
-###Example 2 : Quizz Super-héros :
+### Example 2 : Quizz Super-héros :
 
 [Sources here](https://github.com/arncet/queez/blob/master/example/quizz-config-super-hero.js)
 
@@ -636,7 +636,124 @@ The `results` property of the object `config` will be:
 ]
 ```
 
-##Development:
+### Example 3 : With React :
+
+[Demo here](https://arncet.github.io/queez-react-demo/)
+
+```javascript
+import React, { Component } from 'react'
+import Queez from 'queez'
+import configSuperHero from './configSuperHero'
+import configSurvey from './configSurvey'
+import JSONTree from 'react-json-tree'
+
+//Callback for complete event (super hero quizz)
+const superHeroQuizzCompleteCallback = quizz => {
+  return quizz.getResponse().map(result => result.content)
+}
+
+//Callback for complete event (survey quizz)
+const surveyQuizzCompleteCallback = quizz => {
+  return quizz.getResponse().map(result => ({question: result.content, answer: result.answers[0].content}))
+}
+
+class App extends Component {
+  constructor(props) {
+    super(props)
+
+    //Quizz instantiation
+    const quizz = new Queez(this.getCompleteConfig(configSuperHero, superHeroQuizzCompleteCallback))
+    this.state = {quizz}
+  }
+
+  render() {
+    const {quizz, results} = this.state
+    if (!quizz) return <div>No quizz found :(</div>
+    return (
+      <div className="App">
+        <QuizzTabs reset={(config, callback) => this.reset(config, callback)}/>
+        <h1>{quizz.custom.title}</h1>
+        <ul>
+          {quizz.questions.map((question, i) => {
+            return (
+              <Question
+                question={question}
+                key={i}
+                respond={(questionId, answerId) => this.respond(questionId, answerId)}
+                unRespond={(questionId, answerId) => this.unRespond(questionId, answerId)}
+              />
+            )})
+          }
+        </ul>
+        {results ? <JSONTree data={results} /> : null}
+      </div>
+    )
+  }
+
+  respond(questionId, answerId) {
+    const quizz = this.state.quizz
+    quizz.getQuestion(questionId).respond(answerId)
+    this.setState({quizz})
+  }
+
+  unRespond(questionId, answerId) {
+    const quizz = this.state.quizz
+    quizz.getQuestion(questionId).unRespond(answerId)
+    this.setState({quizz})
+  }
+
+  //Add complete event callback to the given config
+  getCompleteConfig(config, callback) {
+    config.callbacks = {
+      onQuizzComplete: [
+        quizz => this.setState({results: callback(quizz)})
+      ]
+    }
+    return config
+  }
+
+  reset(config, callback) {
+    const quizz = new Queez(this.getCompleteConfig(config, callback))
+    this.setState({quizz, results: null})
+  }
+}
+
+const QuizzTabs = ({reset}) => (
+  <div>
+    <button onClick={() => reset(configSuperHero, superHeroQuizzCompleteCallback)}>Super hero</button>
+    <button onClick={() => reset(configSurvey, surveyQuizzCompleteCallback)}>Survey</button>
+  </div>
+)
+
+const Question = ({question, respond, unRespond}) => (
+  <li>
+    <p>{question.content}</p>
+    <ul>
+      {question.answers.map((answer, i) => {
+        return (
+          <Answer
+            answer={answer}
+            key={i}
+            respond={answerId => respond(question.id, answerId)}
+            unRespond={answerId => unRespond(question.id, answerId)}
+            isSelected={question.answersIds.includes(answer.id)}
+          />
+        )
+      })}
+    </ul>
+  </li>
+)
+
+const Answer = ({answer, respond, unRespond, isSelected}) => {
+  const style = isSelected ? {color: 'red'} : {}
+  const onClick = isSelected ? unRespond : respond
+  return <button onClick={() => onClick(answer.id)} style={style}>{answer.content}</button>
+}
+
+export default App;
+```
+
+## Development:
 
 ```
 npm install //Install node modules
@@ -644,13 +761,6 @@ gulp        //Start gulp watching and compile src
 npm test    //Run tests
 ```
 
-##License :
+## License :
 
 MIT
-
-
-
-
-
-
-
