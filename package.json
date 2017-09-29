@@ -1,6 +1,6 @@
 {
   "name": "queez",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A simple Javascript library to create quizz",
   "main": "dist/index.js",
   "repository": {
@@ -64,6 +64,6 @@
     "copy-package": "cp -R package.json dist/",
     "gulp-build": "./node_modules/.bin/gulp build",
     "gulp-compress": "./node_modules/.bin/gulp compress",
-    "pub": "npm run gulp-build && npm run gulp-compress && npm run copy-readme && npm run copy-package && cd dist && npm publish"
+    "pub": "npm run test && npm run gulp-build && npm run gulp-compress && npm run copy-readme && npm run copy-package && cd dist && npm publish"
   }
 }
