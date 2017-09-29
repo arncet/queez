@@ -3,6 +3,8 @@ import watchify from 'watchify'
 import browserify from 'browserify'
 import babelify from 'babelify'
 import source from 'vinyl-source-stream'
+import uglify from 'gulp-uglify'
+import pump from 'pump'
 
 import {handleErrors} from './gulpHandleErrors'
 
@@ -26,6 +28,24 @@ gulp.task('watch', () => {
   .bundle()
   .pipe(source('index.js'))
   .pipe(gulp.dest('./dist'));
+})
+
+gulp.task('build', () => {
+  browserify('./index.js', {
+    standalone: 'Queez'
+  })
+  .bundle()
+  .pipe(source('index.js'))
+  .pipe(gulp.dest('./dist'));
+})
+
+
+gulp.task('compress', () => {
+  pump([
+    gulp.src('dist/index.js'),
+    uglify(),
+    gulp.dest('dist')
+  ])
 })
 
 gulp.task('default', ['watch'])
